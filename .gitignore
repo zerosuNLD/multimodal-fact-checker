@@ -1,0 +1,69 @@
+# Image folder and files
+image/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.bmp
+*.svg
+*.ico
+*.tiff
+*.tif
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Checkpoints
+checkpoints/*.pt
+similarity/checkpoints/*.pt
+!checkpoints/model_zoo.md
+
+# Environment variables
+.env
+.env.local
+
+# Reports and Feedbacks
+report/
+feedback/
+
+# Temporary uploads
+temp_uploads/
+
+# Agent caches
+.agents/
+.qoder/
