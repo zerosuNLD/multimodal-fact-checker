@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+torch
+python-dotenv
+pydantic
+python-multipart
+pyngrok
+requests
+newspaper3k
+beautifulsoup4
+langchain
+langgraph
+openai
+Pillow
+ftfy
+regex
+tqdm

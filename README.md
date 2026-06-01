@@ -21,41 +21,45 @@ Dự án Fact-Checker (Hệ thống kiểm chứng sự thật) bao gồm một 
 
 ## Hướng dẫn cài đặt và chạy ứng dụng
 
-### 1. Cài đặt và khởi chạy Backend (FastAPI)
-Backend cung cấp API để phân tích claim (thông tin cần kiểm chứng) và hỗ trợ SSE streaming cho tiến trình phân tích.
+### 1. Chuẩn bị (Yêu cầu bắt buộc)
+1. **Model LongCLIP:** Hệ thống cần mô hình LongCLIP. Hãy tải và đặt file vào thư mục: `similarity/checkpoints/longclip-B.pt`
+2. **File `.env`:** Tạo file `.env` ở thư mục gốc (nếu chưa có) và điền các API key cần thiết (ví dụ: `OPENAI_API_KEY`, v.v.).
 
-Mở terminal tại thư mục gốc của dự án (`/factchecker`):
+### 2. Chạy ứng dụng bằng Docker (Khuyên dùng)
+Cách đơn giản nhất để khởi chạy toàn bộ hệ thống là sử dụng Docker Compose. Đảm bảo bạn đã cài đặt Docker và Docker Compose trên máy tính.
+
+Mở terminal tại thư mục gốc của dự án (`/factchecker`) và chạy lệnh:
 
 ```bash
-# 1. (Tuỳ chọn) Tạo môi trường ảo
-python -m venv venv
-source venv/bin/activate  # (hoặc `venv\Scripts\activate` trên Windows)
-
-# 2. Cài đặt các thư viện cần thiết (nếu có requirements.txt thì chạy pip install -r requirements.txt)
-pip install fastapi uvicorn torch python-dotenv pydantic python-multipart pyngrok
-
-# 3. Chép cấu hình biến môi trường
-# Bạn cần có file .env ở thư mục gốc chứa các API Key cần thiết (ví dụ: OPENAI_API_KEY, NGROK_AUTHTOKEN, v.v.)
-
-# 4. Chạy server backend
-python fastapi_server.py
-# Server sẽ khởi chạy tại: http://0.0.0.0:8000
+docker-compose up --build -d
 ```
 
-### 2. Cài đặt và khởi chạy Frontend (Next.js)
-Frontend là giao diện người dùng để gửi yêu cầu và nhận báo cáo.
+Lệnh này sẽ tự động:
+- Xây dựng và khởi chạy Backend (FastAPI) tại **http://localhost:8000**
+- Xây dựng và khởi chạy Frontend (Next.js) tại **http://localhost:3000**
 
-Mở một terminal khác và truy cập vào thư mục `frontend`:
+Để dừng ứng dụng, chạy lệnh:
+```bash
+docker-compose down
+```
 
+---
+
+### 3. Cài đặt và khởi chạy thủ công (Nếu không dùng Docker)
+
+#### Khởi chạy Backend (FastAPI)
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python fastapi_server.py
+```
+
+#### Khởi chạy Frontend (Next.js)
 ```bash
 cd frontend
-
-# 1. Cài đặt các dependencies
 npm install
-
-# 2. Khởi chạy server phát triển
 npm run dev
-# Frontend sẽ khởi chạy tại: http://localhost:3000
 ```
 
 ## Chú ý
