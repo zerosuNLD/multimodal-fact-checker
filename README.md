@@ -22,7 +22,7 @@ Dự án Fact-Checker (Hệ thống kiểm chứng sự thật) bao gồm một 
 ## Hướng dẫn cài đặt và chạy ứng dụng
 
 ### 1. Chuẩn bị (Yêu cầu bắt buộc)
-1. **Model LongCLIP:** Hệ thống cần mô hình LongCLIP. Hãy tải và đặt file vào thư mục: `similarity/checkpoints/longclip-B.pt`
+1. **Model LongCLIP:** Hệ thống cần mô hình LongCLIP. Hãy tải checkpoint của LongCLIP và đặt file vào thư mục: `similarity/checkpoints/longclip-B.pt`
 2. **File `.env`:** Tạo file `.env` ở thư mục gốc (nếu chưa có) và điền các API key cần thiết (ví dụ: `OPENAI_API_KEY`, v.v.).
 
 ### 2. Chạy ứng dụng bằng Docker (Khuyên dùng)
