@@ -62,6 +62,13 @@ npm install
 npm run dev
 ```
 
+## Demo
+
+<img width="778" height="837" alt="image" src="https://github.com/user-attachments/assets/f6720027-53e6-43b6-8861-afcfa550aa9b" />
+
+
+
+
 ## Chú ý
 - Hệ thống cần tải trước model LongCLIP và đặt tại thư mục `similarity/checkpoints/longclip-B.pt` để backend có thể tải thành công.
 - Các file rác hoặc kết quả chạy cục bộ (như report, feedback, ảnh test) đã được loại bỏ khi commit code lên git (được cấu hình trong `.gitignore`).
